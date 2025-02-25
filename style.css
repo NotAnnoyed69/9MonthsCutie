@@ -1,0 +1,303 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F3E5F5; 
+    color: #4A148C; 
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: #D8BFD8;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+/* Sticky Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #D8BFD8; 
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sections */
+section {
+    padding: 20px;
+}
+
+/* Photo Grid - Centered & Balanced */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 images per row */
+    gap: 20px; /* Spacing between images */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto; /* Ensures the grid stays centered */
+    max-width: 1100px; /* Limits width to maintain structure */
+}
+
+/* Style Each Image - Enhancements */
+.photo-grid img {
+    width: 100%;
+    max-width: 200px; /* Adjusted for better balance */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg); /* Slight rotation */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Alternating Tilt for a Playful Effect */
+.photo-grid img:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+/* Hover Effect - Smooth Enlargement */
+.photo-grid img:hover {
+    transform: scale(1.12) rotate(0deg); /* Grow & align */
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating Animation for Dynamic Feel */
+@keyframes floatEffect {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Apply Floating Animation to Some Images */
+.photo-grid img:nth-child(3n) {
+    animation: floatEffect 5s infinite ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .photo-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 images per row on medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 images per row on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row for mobile */
+    }
+}
+
+@media (max-width: 400px) {
+    .photo-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 image per row on very small screens */
+    }
+}
+
+
+/* Centering & Styling the Message Section */
+#messages {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 150px;
+}
+
+/* Container to Ensure Visibility */
+.message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Message Card Design */
+.message-card {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 400px; 
+    word-wrap: break-word; 
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6A1B9A; /* Dark Purple */
+}
+
+/* Hover Effect - Slight Lift */
+.message-card:hover {
+    transform: scale(1.05);
+    background: #D8BFD8; /* Light Purple */
+    color: #4A148C;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .message-card {
+        max-width: 300px;
+        font-size: 1em;
+    }
+}
+
+
+/* Heart Animation */
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    color: #db88fc;
+    animation: floatUp 5s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Container for Our Journey Section */
+#our-journey-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/* Center Content */
+#our-journey {
+    max-width: 1200px;
+    background: #FAE1F3; 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+/* --- NEW IMAGE DESIGN (Polaroid-Style Frames) --- */
+.side-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Polaroid Style Frame */
+.image-frame {
+    position: relative;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Alternate Rotations */
+.image-frame:nth-child(even) {
+    transform: rotate(5deg);
+}
+
+/* Image Styling */
+.image-frame img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Hover Effect */
+.image-frame:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .image-frame img {
+        width: 150px;
+    }
+}
+
+/* --- FIXED LIST DESIGN --- */
+#our-journey ul {
+    list-style-type: none; 
+    padding: 0;
+    text-align: left; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start; 
+}
+
+/* Ensuring Each Line is Separate and Left-Aligned */
+#our-journey ul li {
+    font-size: 1.2em;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    max-width: 600px;
+    text-align: left;
+    color: #6A1B9A; 
+    font-weight: bold;
+    align-self: flex-start; 
+    margin: 0; 
+}
+
+/* Hover Effect */
+#our-journey ul li:hover {
+    transform: scale(1.05);
+    background: #F8BBD0; 
+    color: #4A148C;
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    #our-journey-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-images {
+        width: 180px; 
+        height: auto;
+    }
+
+    #our-journey ul li {
+        max-width: 350px;
+    }
+}
