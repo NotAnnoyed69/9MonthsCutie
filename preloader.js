@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (count === 0) {
             clearInterval(countdownInterval);
-            preloaderContainer.style.animation = "fadeOut 1s forwards"; // Apply fade out
+            preloaderContainer.style.animation = "fadeOut 1s forwards"; 
 
             setTimeout(() => {
-                window.location.href = "index.html"; // Redirect after fade effect
-            }, 1000); // Wait for fade out animation before redirecting
+                window.location.href = "home.html";
+            }, 1000); 
         }
     }, 1000);
 });
